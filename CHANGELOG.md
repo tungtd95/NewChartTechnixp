@@ -1,4 +1,15 @@
+
+
+## [0.0.6+4]
+
+
+## - TODO: Add MORE MA AND EMA
+
+
+
 ## [0.0.6+2]
+
+
 ## - TODO: Add more custom color
 
 ## [0.0.6]

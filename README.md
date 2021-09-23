@@ -1,4 +1,4 @@
-# technixo_k_chart
+# technixo_k_chart_v2
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE)
 

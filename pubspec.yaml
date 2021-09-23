@@ -1,7 +1,7 @@
 name: technixo_k_chart_v2
-description: technixo_k_chart, Writted with pure dart, supported both iOS and Android.
-version: 0.0.6+2
-author: duongkibo
+description: technixo_k_chart_v2, Writted with pure dart, supported both iOS and Android.
+version: 0.0.6+4
+#author: duongkibo
 homepage: https://github.com/duongkibo/NewChartTechnixp
 
 environment:

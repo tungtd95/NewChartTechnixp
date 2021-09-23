@@ -4,11 +4,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:technixo_k_chart/chart_style.dart';
-import 'package:technixo_k_chart/generated/l10n.dart' as k_chart;
-import 'package:technixo_k_chart/k_chart_widget.dart';
-import 'package:technixo_k_chart/model/k_line_model/k_line_model.dart';
-import 'package:technixo_k_chart/technixo_k_chart.dart';
+import 'package:technixo_k_chart_v2/chart_style.dart';
+import 'package:technixo_k_chart_v2/generated/l10n.dart' as k_chart;
+import 'package:technixo_k_chart_v2/k_chart_widget.dart';
+import 'package:technixo_k_chart_v2/model/k_line_model/k_line_model.dart';
+import 'package:technixo_k_chart_v2/technixo_k_chart.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() => runApp(MyApp());
