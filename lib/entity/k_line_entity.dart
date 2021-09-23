@@ -1,5 +1,5 @@
-import 'package:technixo_k_chart/model/k_line_model/k_line_model.dart';
-import 'package:technixo_k_chart/utils/n_interval.dart';
+import 'package:technixo_k_chart_v2/model/k_line_model/k_line_model.dart';
+import 'package:technixo_k_chart_v2/utils/n_interval.dart';
 
 import '../entity/k_entity.dart';
 

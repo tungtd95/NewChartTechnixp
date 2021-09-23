@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart'
     show Color, TextStyle, Rect, Canvas, Size, CustomPainter;
-import 'package:technixo_k_chart/technixo_k_chart.dart';
-import 'package:technixo_k_chart/utils/date_format_util.dart';
-import 'package:technixo_k_chart/utils/number_util.dart';
+import 'package:technixo_k_chart_v2/utils/date_format_util.dart';
+import 'package:technixo_k_chart_v2/utils/n_interval.dart';
+import 'package:technixo_k_chart_v2/utils/number_util.dart';
 
 import '../chart_style.dart' show ChartStyle;
 import '../entity/k_line_entity.dart';

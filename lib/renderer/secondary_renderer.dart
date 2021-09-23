@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:technixo_k_chart/technixo_k_chart.dart';
+import 'package:technixo_k_chart_v2/utils/n_interval.dart';
 
 import '../entity/macd_entity.dart';
 import 'base_chart_renderer.dart';

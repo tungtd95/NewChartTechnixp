@@ -1,4 +1,4 @@
-import 'package:technixo_k_chart/entity/cci_entity.dart';
+import 'package:technixo_k_chart_v2/entity/cci_entity.dart';
 
 import 'candle_entity.dart';
 import 'kdj_entity.dart';

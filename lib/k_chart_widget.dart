@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
-import 'package:technixo_k_chart/generated/l10n.dart';
-import 'package:technixo_k_chart/technixo_k_chart.dart';
+import 'package:technixo_k_chart_v2/generated/l10n.dart';
+import 'package:technixo_k_chart_v2/utils/data_util.dart';
+import 'package:technixo_k_chart_v2/utils/n_interval.dart';
 
 import 'chart_style.dart';
 import 'entity/info_window_entity.dart';

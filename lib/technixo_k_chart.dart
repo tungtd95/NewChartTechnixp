@@ -1,4 +1,4 @@
-library technixo_k_chart;
+library technixo_k_chart_v2;
 
 export 'chart_style.dart';
 export 'depth_chart.dart';

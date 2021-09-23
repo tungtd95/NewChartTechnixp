@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:technixo_k_chart/chart_style.dart';
-import 'package:technixo_k_chart/utils/number_util.dart';
+import 'package:technixo_k_chart_v2/utils/number_util.dart';
+
+
+import '../chart_style.dart';
 
 export '../chart_style.dart';
 
