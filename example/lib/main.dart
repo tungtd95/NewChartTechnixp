@@ -45,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isLine = false;
   bool volHidden = true;
   List<DepthEntity> _bids = [], _asks = [];
-  List<int> maDayList = const [];
-  List<int> emaDayList = const [];
+  List<int> maDayList = const [5];
+  List<int> emaDayList = const [5];
 
   late WebSocketChannel channel;
   Stream? stream;

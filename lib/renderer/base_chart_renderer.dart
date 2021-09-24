@@ -54,14 +54,16 @@ abstract class BaseChartRenderer<T> {
   void drawRightText(canvas, textStyle, int gridRows);
 
   void drawChart(T lastPoint, T curPoint, double lastX, double curX, Size size,
-      Canvas canvas);
+      Canvas canvas, double strokes);
 
   void drawLine(double lastPrice, double curPrice, Canvas canvas, double lastX,
-      double curX, Color color) {
+      double curX, Color color,{double strokes =0.5}) {
     double lastY = getY(lastPrice);
     double curY = getY(curPrice);
+    final paint = Paint();
+    paint.strokeWidth = 10;
     canvas.drawLine(
-        Offset(lastX, lastY), Offset(curX, curY), chartPaint..color = color);
+        Offset(lastX, lastY), Offset(curX, curY), chartPaint..color = color..strokeWidth=strokes..strokeCap=StrokeCap.round);
   }
 
   TextStyle getTextStyle(Color color) {

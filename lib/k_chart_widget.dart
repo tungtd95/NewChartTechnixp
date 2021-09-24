@@ -203,6 +203,7 @@ class _KChartWidgetState extends State<KChartWidget>
           CustomPaint(
             size: const Size(double.infinity, double.infinity),
             painter: ChartPainter(
+              0.5,
               widget.chartColors,
               widget.chartStyle,
               datas: widget.datas,
@@ -222,6 +223,7 @@ class _KChartWidgetState extends State<KChartWidget>
               bgColor: widget.bgColor,
               maDayList: widget.maDayList.length==0?hashList:widget.maDayList,
               emaDayList: widget.emaDayList.length==0?hashList:widget.emaDayList,
+
             ),
           ),
           _buildInfoDialog(),

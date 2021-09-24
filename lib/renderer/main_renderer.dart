@@ -290,12 +290,12 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
 
   @override
   void drawChart(CandleEntity lastPoint, CandleEntity curPoint, double lastX,
-      double curX, Size size, Canvas canvas) {
+      double curX, Size size, Canvas canvas,double strokes) {
     if (isLine != true) drawCandle(curPoint, canvas, curX);
     if (isLine == true) {
       draLine(lastPoint.close, curPoint.close, canvas, lastX, curX);
     } else if (state == MainState.MA) {
-      drawMaLine(lastPoint, curPoint, canvas, lastX, curX);
+      drawMaLine(lastPoint, curPoint, canvas, lastX, curX,strokes);
     } else if (state == MainState.EMA) {
       drawEMaLine(lastPoint, curPoint, canvas, lastX, curX);
     } else if (state == MainState.BOLL) {
@@ -351,7 +351,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   }
 
   void drawMaLine(CandleEntity lastPoint, CandleEntity curPoint, Canvas canvas,
-      double lastX, double curX) {
+      double lastX, double curX,double strokes) {
     switch (curPoint.maValueList?.length) {
       case 6:
         for (int i = 0; i < (curPoint.maValueList?.length ?? 0); i++) {

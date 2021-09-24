@@ -23,8 +23,10 @@ class ChartPainter extends BaseChartPainter {
   List<Color>? bgColor;
   final ChartColors chartColors;
   final ChartStyle chartStyle;
+  double strokes;
 
   ChartPainter(
+      this.strokes,
     this.chartColors,
     this.chartStyle, {
     required List<KLineEntity> datas,
@@ -152,10 +154,10 @@ class ChartPainter extends BaseChartPainter {
       double curX = getX(i);
       double lastX = i == 0 ? curX : getX(i - 1);
 
-      mMainRenderer.drawChart(lastPoint, curPoint, lastX, curX, size, canvas);
-      mVolRenderer?.drawChart(lastPoint, curPoint, lastX, curX, size, canvas);
+      mMainRenderer.drawChart(lastPoint, curPoint, lastX, curX, size, canvas,strokes);
+      mVolRenderer?.drawChart(lastPoint, curPoint, lastX, curX, size, canvas,strokes);
       mSecondaryRenderer?.drawChart(
-          lastPoint, curPoint, lastX, curX, size, canvas);
+          lastPoint, curPoint, lastX, curX, size, canvas,strokes);
     }
 
     if (isLongPress == true) drawCrossLine(canvas, size);
