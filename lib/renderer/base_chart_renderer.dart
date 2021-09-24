@@ -57,7 +57,7 @@ abstract class BaseChartRenderer<T> {
       Canvas canvas, double strokes);
 
   void drawLine(double lastPrice, double curPrice, Canvas canvas, double lastX,
-      double curX, Color color,{double strokes =0.5}) {
+      double curX, Color color,double strokes) {
     double lastY = getY(lastPrice);
     double curY = getY(curPrice);
     final paint = Paint();

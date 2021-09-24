@@ -134,6 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fractionDigits: 2,
                         maDayList: maDayList,
                         emaDayList:  emaDayList,
+                        strokes: 1,
                       ),
                     ),
                     if (showLoading)

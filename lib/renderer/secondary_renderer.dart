@@ -37,32 +37,32 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
       double curX, Size size, Canvas canvas,double strokes) {
     switch (state) {
       case SecondaryState.MACD:
-        drawMACD(curPoint, canvas, curX, lastPoint, lastX);
+        drawMACD(curPoint, canvas, curX, lastPoint, lastX,strokes);
         break;
       case SecondaryState.KDJ:
         if (lastPoint.k != 0)
           drawLine(lastPoint.k!, curPoint.k!, canvas, lastX, curX,
-              chartColors.kColor);
+              chartColors.kColor,strokes);
         if (lastPoint.d != 0)
           drawLine(lastPoint.d!, curPoint.d!, canvas, lastX, curX,
-              chartColors.dColor);
+              chartColors.dColor,strokes);
         if (lastPoint.j != 0)
           drawLine(lastPoint.j!, curPoint.j!, canvas, lastX, curX,
-              chartColors.jColor);
+              chartColors.jColor,strokes);
         break;
       case SecondaryState.RSI:
         if (lastPoint.rsi != 0)
           drawLine(lastPoint.rsi!, curPoint.rsi!, canvas, lastX, curX,
-              chartColors.rsiColor);
+              chartColors.rsiColor,strokes);
         break;
       case SecondaryState.WR:
         if (lastPoint.r != 0)
           drawLine(lastPoint.r!, curPoint.r!, canvas, lastX, curX,
-              chartColors.rsiColor);
+              chartColors.rsiColor,strokes);
         break;
       case SecondaryState.CCI:
         drawLine(lastPoint.cci!, curPoint.cci!, canvas, lastX, curX,
-            chartColors.rsiColor);
+            chartColors.rsiColor,strokes);
         break;
       case SecondaryState.NONE:
         break;
@@ -70,7 +70,7 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
   }
 
   void drawMACD(MACDEntity curPoint, Canvas canvas, double curX,
-      MACDEntity lastPoint, double lastX) {
+      MACDEntity lastPoint, double lastX,double strokes) {
     double macdY = getY(curPoint.macd!);
     double r = mMACDWidth / 2;
     double zeroy = getY(0);
@@ -83,11 +83,11 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
     }
     if (lastPoint.dif != 0) {
       drawLine(lastPoint.dif!, curPoint.dif!, canvas, lastX, curX,
-          chartColors.difColor);
+          chartColors.difColor,strokes);
     }
     if (lastPoint.dea != 0) {
       drawLine(lastPoint.dea!, curPoint.dea!, canvas, lastX, curX,
-          chartColors.deaColor);
+          chartColors.deaColor,strokes);
     }
   }
 

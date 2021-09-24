@@ -26,22 +26,20 @@ class KChartWidget extends StatefulWidget {
   final ChartStyle chartStyle;
   final String text;
   final TextStyle textStyle;
+  final double? strokes;
 
-  KChartWidget(
-    this.datas,
-    this.chartColors,
-    this.chartStyle, {
-    this.text = '',
-    this.textStyle = const TextStyle(),
-    this.mainState = MainState.MA,
-    this.volHidden = false,
-    this.secondaryState = SecondaryState.MACD,
-    this.isLine = false,
-    this.maDayList = const [5, 10, 20],
-    this.emaDayList = const [5, 10, 20],
-    this.bgColor,
-    int fractionDigits = 2,
-  }) {
+  KChartWidget(this.datas, this.chartColors, this.chartStyle,
+      {this.text = '',
+      this.textStyle = const TextStyle(),
+      this.mainState = MainState.MA,
+      this.volHidden = false,
+      this.secondaryState = SecondaryState.MACD,
+      this.isLine = false,
+      this.maDayList = const [5, 10, 20],
+      this.emaDayList = const [5, 10, 20],
+      this.bgColor,
+      int fractionDigits = 2,
+      this.strokes }) {
     NumberUtil.fractionDigits = fractionDigits;
   }
 
@@ -57,7 +55,8 @@ class _KChartWidgetState extends State<KChartWidget>
   late StreamController<InfoWindowEntity?> mInfoWindowStream;
   double mWidth = 0;
   late AnimationController _scrollXController;
-  List<int> hashList = [5,10,15,20,25,30];
+  List<int> hashList = [5, 10, 15, 20, 25, 30];
+
   double getMinScrollX() {
     return mScaleX;
   }
@@ -126,8 +125,8 @@ class _KChartWidgetState extends State<KChartWidget>
   @override
   Widget build(BuildContext context) {
     final dataUtil = DataUtil(
-      maDayList: widget.maDayList.length==0?hashList:widget.maDayList,
-      emaDayList: widget.emaDayList.length==0?hashList:widget.emaDayList,
+      maDayList: widget.maDayList.length == 0 ? hashList : widget.maDayList,
+      emaDayList: widget.emaDayList.length == 0 ? hashList : widget.emaDayList,
     );
 
     if (widget.datas.isNotEmpty) {
@@ -203,7 +202,7 @@ class _KChartWidgetState extends State<KChartWidget>
           CustomPaint(
             size: const Size(double.infinity, double.infinity),
             painter: ChartPainter(
-              0.5,
+              widget.strokes!,
               widget.chartColors,
               widget.chartStyle,
               datas: widget.datas,
@@ -221,9 +220,10 @@ class _KChartWidgetState extends State<KChartWidget>
               opacity: _animation.value,
               controller: _controller,
               bgColor: widget.bgColor,
-              maDayList: widget.maDayList.length==0?hashList:widget.maDayList,
-              emaDayList: widget.emaDayList.length==0?hashList:widget.emaDayList,
-
+              maDayList:
+                  widget.maDayList.length == 0 ? hashList : widget.maDayList,
+              emaDayList:
+                  widget.emaDayList.length == 0 ? hashList : widget.emaDayList,
             ),
           ),
           _buildInfoDialog(),
