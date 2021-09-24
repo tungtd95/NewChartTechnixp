@@ -54,7 +54,7 @@ abstract class BaseChartRenderer<T> {
   void drawRightText(canvas, textStyle, int gridRows);
 
   void drawChart(T lastPoint, T curPoint, double lastX, double curX, Size size,
-      Canvas canvas, double strokes);
+      Canvas canvas, List<double> strokes);
 
   void drawLine(double lastPrice, double curPrice, Canvas canvas, double lastX,
       double curX, Color color,double strokes) {

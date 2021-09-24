@@ -290,7 +290,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
 
   @override
   void drawChart(CandleEntity lastPoint, CandleEntity curPoint, double lastX,
-      double curX, Size size, Canvas canvas,double strokes) {
+      double curX, Size size, Canvas canvas,List<double> strokes) {
     if (isLine != true) drawCandle(curPoint, canvas, curX);
     if (isLine == true) {
       draLine(lastPoint.close, curPoint.close, canvas, lastX, curX);
@@ -351,7 +351,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   }
 
   void drawMaLine(CandleEntity lastPoint, CandleEntity curPoint, Canvas canvas,
-      double lastX, double curX,double strokes) {
+      double lastX, double curX,List<double> strokes) {
     switch (curPoint.maValueList?.length) {
       case 6:
         for (int i = 0; i < (curPoint.maValueList?.length ?? 0); i++) {
@@ -369,7 +369,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   Colors.transparent,
                   Colors.transparent,
                   Colors.transparent,
-                ][i], strokes);
+                ][i], strokes[i]);
           }
         }
         break;
@@ -388,7 +388,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma30Color,
                   chartColors.ma40Color,
                   chartColors.ma50Color
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -406,7 +406,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma10Color,
                   chartColors.ma30Color,
                   chartColors.ma40Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -423,7 +423,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma5Color,
                   chartColors.ma10Color,
                   chartColors.ma30Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -439,7 +439,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 [
                   chartColors.ma5Color,
                   chartColors.ma10Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -454,7 +454,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 curX,
                 [
                   chartColors.ma5Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -465,7 +465,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
           canvas,
           247.5,
           258.5,
-          Colors.transparent,strokes
+          Colors.transparent,0.5
         );
 
         break;
@@ -473,7 +473,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   }
 
   void drawEMaLine(CandleEntity lastPoint, CandleEntity curPoint, Canvas canvas,
-      double lastX, double curX,double strokes) {
+      double lastX, double curX,List<double> strokes) {
     switch (curPoint.emaValueList?.length) {
       case 1:
         for (int i = 0; i < (curPoint.emaValueList?.length ?? 0); i++) {
@@ -486,7 +486,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 curX,
                 [
                   chartColors.ma5Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -502,7 +502,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 [
                   chartColors.ma5Color,
                   chartColors.ma10Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -519,7 +519,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma5Color,
                   chartColors.ma10Color,
                   chartColors.ma30Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -537,7 +537,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma10Color,
                   chartColors.ma30Color,
                   chartColors.ma40Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -556,7 +556,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   chartColors.ma30Color,
                   chartColors.ma40Color,
                   chartColors.ma50Color,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -576,7 +576,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                   Colors.transparent,
                   Colors.transparent,
                   Colors.transparent,
-                ][i],strokes);
+                ][i],strokes[i]);
           }
         }
         break;
@@ -584,18 +584,18 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
   }
 
   void drawBollLine(CandleEntity lastPoint, CandleEntity curPoint,
-      Canvas canvas, double lastX, double curX,double strokes) {
+      Canvas canvas, double lastX, double curX,List<double> strokes) {
     if (lastPoint.up != 0) {
       drawLine(lastPoint.up!, curPoint.up!, canvas, lastX, curX,
-          chartColors.ma10Color,strokes);
+          chartColors.ma10Color,strokes[0]);
     }
     if (lastPoint.mb != 0) {
       drawLine(lastPoint.mb!, curPoint.mb!, canvas, lastX, curX,
-          chartColors.ma5Color,strokes);
+          chartColors.ma5Color,strokes[1]);
     }
     if (lastPoint.dn != 0) {
       drawLine(lastPoint.dn!, curPoint.dn!, canvas, lastX, curX,
-          chartColors.ma30Color,strokes);
+          chartColors.ma30Color,strokes[2]);
     }
   }
 

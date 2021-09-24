@@ -26,7 +26,7 @@ class KChartWidget extends StatefulWidget {
   final ChartStyle chartStyle;
   final String text;
   final TextStyle textStyle;
-  final double? strokes;
+  final List<double>? strokes;
 
   KChartWidget(this.datas, this.chartColors, this.chartStyle,
       {this.text = '',

@@ -34,35 +34,35 @@ class SecondaryRenderer extends BaseChartRenderer<MACDEntity> {
 
   @override
   void drawChart(MACDEntity lastPoint, MACDEntity curPoint, double lastX,
-      double curX, Size size, Canvas canvas,double strokes) {
+      double curX, Size size, Canvas canvas,List<double> strokes) {
     switch (state) {
       case SecondaryState.MACD:
-        drawMACD(curPoint, canvas, curX, lastPoint, lastX,strokes);
+        drawMACD(curPoint, canvas, curX, lastPoint, lastX,strokes[0]);
         break;
       case SecondaryState.KDJ:
         if (lastPoint.k != 0)
           drawLine(lastPoint.k!, curPoint.k!, canvas, lastX, curX,
-              chartColors.kColor,strokes);
+              chartColors.kColor,strokes[0]);
         if (lastPoint.d != 0)
           drawLine(lastPoint.d!, curPoint.d!, canvas, lastX, curX,
-              chartColors.dColor,strokes);
+              chartColors.dColor,strokes[1]);
         if (lastPoint.j != 0)
           drawLine(lastPoint.j!, curPoint.j!, canvas, lastX, curX,
-              chartColors.jColor,strokes);
+              chartColors.jColor,strokes[2]);
         break;
       case SecondaryState.RSI:
         if (lastPoint.rsi != 0)
           drawLine(lastPoint.rsi!, curPoint.rsi!, canvas, lastX, curX,
-              chartColors.rsiColor,strokes);
+              chartColors.rsiColor,strokes[0]);
         break;
       case SecondaryState.WR:
         if (lastPoint.r != 0)
           drawLine(lastPoint.r!, curPoint.r!, canvas, lastX, curX,
-              chartColors.rsiColor,strokes);
+              chartColors.rsiColor,strokes[1]);
         break;
       case SecondaryState.CCI:
         drawLine(lastPoint.cci!, curPoint.cci!, canvas, lastX, curX,
-            chartColors.rsiColor,strokes);
+            chartColors.rsiColor,strokes[2]);
         break;
       case SecondaryState.NONE:
         break;

@@ -32,7 +32,7 @@ class VolRenderer extends BaseChartRenderer<VolumeEntity> {
 
   @override
   void drawChart(VolumeEntity lastPoint, VolumeEntity curPoint, double lastX,
-      double curX, Size size, Canvas canvas,double stroke) {
+      double curX, Size size, Canvas canvas,List<double> stroke) {
     double r = mVolWidth / 2;
     double top = getY(curPoint.vol);
     double bottom = chartRect.bottom;
@@ -45,12 +45,12 @@ class VolRenderer extends BaseChartRenderer<VolumeEntity> {
 
     if (lastPoint.MA5Volume != 0) {
       drawLine(lastPoint.MA5Volume!, curPoint.MA5Volume!, canvas, lastX, curX,
-          chartColors.ma5Color,stroke);
+          chartColors.ma5Color,1);
     }
 
     if (lastPoint.MA10Volume != 0) {
       drawLine(lastPoint.MA10Volume!, curPoint.MA10Volume!, canvas, lastX, curX,
-          chartColors.ma10Color,stroke);
+          chartColors.ma10Color,1);
     }
   }
 

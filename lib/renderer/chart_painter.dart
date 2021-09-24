@@ -23,7 +23,7 @@ class ChartPainter extends BaseChartPainter {
   List<Color>? bgColor;
   final ChartColors chartColors;
   final ChartStyle chartStyle;
-  double strokes;
+  List<double> strokes;
 
   ChartPainter(
     this.strokes,
