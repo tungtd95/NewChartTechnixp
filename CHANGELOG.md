@@ -1,3 +1,8 @@
+## [0.0.6+7]
+
+
+## - TODO: Add choose Stroke MA
+## FIX ADD STROKE NOT WORKING
 ## [0.0.6+6]
 
 
