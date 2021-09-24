@@ -1,3 +1,7 @@
+## [0.0.6+6]
+
+
+## - TODO: Add choose Stroke MA 
 
 
 ## [0.0.6+4]
