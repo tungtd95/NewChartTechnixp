@@ -5,7 +5,21 @@ import '../entity/k_line_entity.dart';
 class DataUtil {
   List<int> maDayList = const [5, 10, 20];
   List<int> emaDayList = const [5, 10, 20];
-  int n = 20, k = 2;
+
+  /// bollinger band
+  int n = 21, k = 1;
+
+  ///life cycle day
+  /// MACD
+  int n1 = 5, n2 = 10;
+
+  ///RSI
+  int rsiPeriod = 14;
+
+  ///KDJ
+  int perCentK = 50;
+  int perCenD = 50;
+  int indexStart = 13;
 
   DataUtil._();
 
@@ -16,6 +30,12 @@ class DataUtil {
     List<int>? emaDayList,
     int? n,
     int? k,
+    int? n1,
+    int? n2,
+    int? rsiPeriod,
+    int? perCentK,
+    int? perCenD,
+    int? indexStart,
   }) {
     if (maDayList != null) I.maDayList = maDayList;
 
@@ -144,9 +164,9 @@ class DataUtil {
         ema26 = closePrice;
       } else {
         // EMA（12） = 前一日EMA（12） X 11/13 + 今日收盘价 X 2/13
-        ema12 = ema12 * 11 / 13 + closePrice * 2 / 13;
+        ema12 = ema12 * (2 / (n1 + 1)) + closePrice * (1 - (2 / (n1 + 1)));
         // EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
-        ema26 = ema26 * 25 / 27 + closePrice * 2 / 27;
+        ema26 = ema26 * (2 / (n2 + 1)) + closePrice * (1 - (2 / (n2 + 1)));
       }
       // DIF = EMA（12） - EMA（26） 。
       // 今日DEA = （前一日DEA X 8/10 + 今日DIF X 2/10）
@@ -205,8 +225,8 @@ class DataUtil {
         double Rmax = max(0, closePrice - datas[i - 1].close.toDouble());
         double RAbs = (closePrice - datas[i - 1].close.toDouble()).abs();
 
-        rsiMaxEma = (Rmax + (14 - 1) * rsiMaxEma) / 14;
-        rsiABSEma = (RAbs + (14 - 1) * rsiABSEma) / 14;
+        rsiMaxEma = (Rmax + (rsiPeriod - 1) * rsiMaxEma) / rsiPeriod;
+        rsiABSEma = (RAbs + (rsiPeriod - 1) * rsiABSEma) / rsiPeriod;
         rsi = (rsiMaxEma / rsiABSEma) * 100;
       }
       if (i < 13) rsi = null;
@@ -221,7 +241,7 @@ class DataUtil {
     for (int i = 0; i < datas.length; i++) {
       KLineEntity entity = datas[i];
       final double closePrice = entity.close;
-      int startIndex = i - 13;
+      int startIndex = i - indexStart;
       if (startIndex < 0) {
         startIndex = 0;
       }
