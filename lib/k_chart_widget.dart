@@ -27,6 +27,14 @@ class KChartWidget extends StatefulWidget {
   final String text;
   final TextStyle textStyle;
   final List<double>? strokes;
+  final int n;
+  final int k;
+  final int n1;
+  final int n2;
+  final int rsiPeriod;
+  final double perCentK;
+  final double perCenD;
+  final int indexStart;
 
   KChartWidget(this.datas, this.chartColors, this.chartStyle,
       {this.text = '',
@@ -39,7 +47,15 @@ class KChartWidget extends StatefulWidget {
       this.emaDayList = const [5, 10, 20],
       this.bgColor,
       int fractionDigits = 2,
-      this.strokes }) {
+      this.strokes,
+      this.k = 2,
+      this.n = 20,
+      this.n1 = 5,
+      this.n2 = 10,
+      this.rsiPeriod = 14,
+      this.perCenD = 50,
+      this.perCentK = 50,
+      this.indexStart = 13}) {
     NumberUtil.fractionDigits = fractionDigits;
   }
 
@@ -125,9 +141,17 @@ class _KChartWidgetState extends State<KChartWidget>
   @override
   Widget build(BuildContext context) {
     final dataUtil = DataUtil(
-      maDayList: widget.maDayList.length == 0 ? hashList : widget.maDayList,
-      emaDayList: widget.emaDayList.length == 0 ? hashList : widget.emaDayList,
-    );
+        maDayList: widget.maDayList.length == 0 ? hashList : widget.maDayList,
+        emaDayList:
+            widget.emaDayList.length == 0 ? hashList : widget.emaDayList,
+        n: widget.n,
+        k: widget.k,
+        n1: widget.n1,
+        n2: widget.n2,
+        indexStart: widget.indexStart,
+        perCenD: widget.perCenD,
+        perCentK: widget.perCentK,
+        rsiPeriod: widget.rsiPeriod);
 
     if (widget.datas.isNotEmpty) {
       dataUtil.calculate(widget.datas);

@@ -17,8 +17,8 @@ class DataUtil {
   int rsiPeriod = 14;
 
   ///KDJ
-  int perCentK = 50;
-  int perCenD = 50;
+  double perCentK = 50;
+  double perCenD = 50;
   int indexStart = 13;
 
   DataUtil._();
@@ -33,8 +33,8 @@ class DataUtil {
     int? n1,
     int? n2,
     int? rsiPeriod,
-    int? perCentK,
-    int? perCenD,
+    double? perCentK,
+    double? perCenD,
     int? indexStart,
   }) {
     if (maDayList != null) I.maDayList = maDayList;
@@ -229,7 +229,7 @@ class DataUtil {
         rsiABSEma = (RAbs + (rsiPeriod - 1) * rsiABSEma) / rsiPeriod;
         rsi = (rsiMaxEma / rsiABSEma) * 100;
       }
-      if (i < 13) rsi = null;
+      if (i < rsiPeriod) rsi = null;
       if (rsi != null && rsi.isNaN) rsi = null;
       entity.rsi = rsi;
     }
@@ -256,8 +256,8 @@ class DataUtil {
         rsv = 0;
       }
       if (i == 0) {
-        k = 50;
-        d = 50;
+        k = perCentK;
+        d = perCenD;
       } else {
         k = (rsv + 2 * k) / 3;
         d = (k + 2 * d) / 3;
