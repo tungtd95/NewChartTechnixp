@@ -1,29 +1,26 @@
+## [0.0.6+10]
+
+## - TODO: DRAW CUSTOM RSI,KDJ,MACD
+
 ## [0.0.6+8]
 
-
 ## - TODO: Add choose Stroke MA
+
 ## FIX ADD STROKE NOT WORKING
 
 ## [0.0.6+7]
-
 
 ## - TODO: Add choose Stroke MA
 ## FIX ADD STROKE NOT WORKING
 ## [0.0.6+6]
 
-
-## - TODO: Add choose Stroke MA 
-
+## - TODO: Add choose Stroke MA
 
 ## [0.0.6+4]
 
-
 ## - TODO: Add MORE MA AND EMA
 
-
-
 ## [0.0.6+2]
-
 
 ## - TODO: Add more custom color
 
