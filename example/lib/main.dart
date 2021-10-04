@@ -133,8 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         volHidden: volHidden,
                         fractionDigits: 2,
                         maDayList: maDayList,
-                        emaDayList:  emaDayList,
-                        strokes: [1,1,1,1,1],
+                        emaDayList: emaDayList,
+                        strokesMainState: [1, 1, 1, 1, 1],
                       ),
                     ),
                     if (showLoading)

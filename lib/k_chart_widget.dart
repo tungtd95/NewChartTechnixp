@@ -26,7 +26,8 @@ class KChartWidget extends StatefulWidget {
   final ChartStyle chartStyle;
   final String text;
   final TextStyle textStyle;
-  final List<double>? strokes;
+  final List<double>? strokesMainState;
+  final List<double>? strokeSecondState;
   final int n;
   final int k;
   final int n1;
@@ -47,7 +48,8 @@ class KChartWidget extends StatefulWidget {
       this.emaDayList = const [5, 10, 20],
       this.bgColor,
       int fractionDigits = 2,
-      this.strokes,
+      this.strokesMainState,
+      this.strokeSecondState,
       this.k = 2,
       this.n = 20,
       this.n1 = 5,
@@ -226,7 +228,6 @@ class _KChartWidgetState extends State<KChartWidget>
           CustomPaint(
             size: const Size(double.infinity, double.infinity),
             painter: ChartPainter(
-              widget.strokes!,
               widget.chartColors,
               widget.chartStyle,
               datas: widget.datas,
@@ -248,6 +249,8 @@ class _KChartWidgetState extends State<KChartWidget>
                   widget.maDayList.length == 0 ? hashList : widget.maDayList,
               emaDayList:
                   widget.emaDayList.length == 0 ? hashList : widget.emaDayList,
+              strokesMainrender: widget.strokesMainState!,
+              strokeSecondState: widget.strokeSecondState!,
             ),
           ),
           _buildInfoDialog(),
