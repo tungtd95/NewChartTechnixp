@@ -1,3 +1,7 @@
+## [0.0.6+12]
+
+## - TODO: add stroke secondSate
+
 ## [0.0.6+11]
 
 ## - TODO: add stroke secondSate
