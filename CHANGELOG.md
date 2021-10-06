@@ -1,6 +1,6 @@
 ## [0.0.6+12]
 
-## - TODO: add stroke secondSate
+## - TODO: add color EmA
 
 ## [0.0.6+11]
 
