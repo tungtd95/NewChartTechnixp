@@ -186,7 +186,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
 
     if (data.emaValueList?.length == 1) {
       List<Color> listColors = [
-        chartColors.ma5Color,
+        chartColors.ema5Color,
       ];
       for (int i = 0; i < (data.emaValueList?.length ?? 0); i++) {
         if (data.emaValueList?[i] != 0) {
@@ -200,8 +200,8 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       return result;
     } else if (data.emaValueList?.length == 2) {
       List<Color> listColors = [
-        chartColors.ma5Color,
-        chartColors.ma10Color,
+        chartColors.ema5Color,
+        chartColors.ema10Color,
       ];
       for (int i = 0; i < (data.emaValueList?.length ?? 0); i++) {
         if (data.emaValueList?[i] != 0) {
@@ -215,9 +215,9 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       return result;
     } else if (data.emaValueList?.length == 3) {
       List<Color> listColors = [
-        chartColors.ma5Color,
-        chartColors.ma10Color,
-        chartColors.ma30Color,
+        chartColors.ema5Color,
+        chartColors.ema10Color,
+        chartColors.ema30Color,
       ];
       for (int i = 0; i < (data.emaValueList?.length ?? 0); i++) {
         if (data.emaValueList?[i] != 0) {
@@ -231,10 +231,10 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       return result;
     } else if (data.emaValueList?.length == 4) {
       List<Color> listColors = [
-        chartColors.ma5Color,
-        chartColors.ma10Color,
-        chartColors.ma30Color,
-        chartColors.ma40Color,
+        chartColors.ema5Color,
+        chartColors.ema10Color,
+        chartColors.ema30Color,
+        chartColors.ema40Color,
       ];
       for (int i = 0; i < (data.emaValueList?.length ?? 0); i++) {
         if (data.emaValueList?[i] != 0) {
@@ -248,11 +248,11 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       return result;
     } else if (data.emaValueList?.length == 5) {
       List<Color> listColors = [
-        chartColors.ma5Color,
-        chartColors.ma10Color,
-        chartColors.ma30Color,
-        chartColors.ma40Color,
-        chartColors.ma50Color,
+        chartColors.ema5Color,
+        chartColors.ema10Color,
+        chartColors.ema30Color,
+        chartColors.ema40Color,
+        chartColors.ema50Color,
       ];
       for (int i = 0; i < (data.emaValueList?.length ?? 0); i++) {
         if (data.emaValueList?[i] != 0) {
@@ -485,7 +485,7 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 lastX,
                 curX,
                 [
-                  chartColors.ma5Color,
+                  chartColors.ema5Color,
                 ][i],strokes[i]);
           }
         }
@@ -500,8 +500,8 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 lastX,
                 curX,
                 [
-                  chartColors.ma5Color,
-                  chartColors.ma10Color,
+                  chartColors.ema5Color,
+                  chartColors.ema10Color,
                 ][i],strokes[i]);
           }
         }
@@ -516,9 +516,9 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 lastX,
                 curX,
                 [
-                  chartColors.ma5Color,
-                  chartColors.ma10Color,
-                  chartColors.ma30Color,
+                  chartColors.ema5Color,
+                  chartColors.ema10Color,
+                  chartColors.ema30Color,
                 ][i],strokes[i]);
           }
         }
@@ -533,10 +533,10 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 lastX,
                 curX,
                 [
-                  chartColors.ma5Color,
-                  chartColors.ma10Color,
-                  chartColors.ma30Color,
-                  chartColors.ma40Color,
+                  chartColors.ema5Color,
+                  chartColors.ema10Color,
+                  chartColors.ema30Color,
+                  chartColors.ema40Color,
                 ][i],strokes[i]);
           }
         }
@@ -551,11 +551,11 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
                 lastX,
                 curX,
                 [
-                  chartColors.ma5Color,
-                  chartColors.ma10Color,
-                  chartColors.ma30Color,
-                  chartColors.ma40Color,
-                  chartColors.ma50Color,
+                  chartColors.ema5Color,
+                  chartColors.ema10Color,
+                  chartColors.ema30Color,
+                  chartColors.ema40Color,
+                  chartColors.ema50Color,
                 ][i],strokes[i]);
           }
         }
@@ -587,15 +587,15 @@ class MainRenderer extends BaseChartRenderer<CandleEntity> {
       Canvas canvas, double lastX, double curX,List<double> strokes) {
     if (lastPoint.up != 0) {
       drawLine(lastPoint.up!, curPoint.up!, canvas, lastX, curX,
-          chartColors.ma10Color,strokes[0]);
+          chartColors.bollFirstColor, strokes[0]);
     }
     if (lastPoint.mb != 0) {
       drawLine(lastPoint.mb!, curPoint.mb!, canvas, lastX, curX,
-          chartColors.ma5Color,strokes[1]);
+          chartColors.bollFirstColor, strokes[1]);
     }
     if (lastPoint.dn != 0) {
       drawLine(lastPoint.dn!, curPoint.dn!, canvas, lastX, curX,
-          chartColors.ma30Color,strokes[2]);
+          chartColors.bollThirdColor, strokes[2]);
     }
   }
 

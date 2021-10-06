@@ -11,9 +11,17 @@ class ChartColors {
   ]; //k线阴影渐变
   Color ma5Color = Color(0xffECC94B);
   Color ma10Color = Color(0xffD53F8C);
-  Color ma30Color = Color(0xff9979C6);
+  Color ma30Color = Color(0xff376cc7);
   Color ma40Color = Color(0xff1AC486);
   Color ma50Color = Color(0xff9F7AEA);
+  Color ema5Color = Color(0xffECC94B);
+  Color ema10Color = Color(0xffD53F8C);
+  Color ema30Color = Color(0xff9979C6);
+  Color ema40Color = Color(0xff1AC486);
+  Color ema50Color = Color(0xffdb1049);
+  Color bollFirstColor = Color(0xff9979C6);
+  Color bollSecondColor = Color(0xff1AC486);
+  Color bollThirdColor = Color(0xffdb1049);
   Color upColor = Color(0xff4DAA90);
   Color dnColor = Color(0xffC15466);
   Color volColor = Color(0xff4729AE);
