@@ -95,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print(datas);
     return Scaffold(
       backgroundColor: Color(0xff17212F),
       body: StreamBuilder<dynamic>(
@@ -135,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         maDayList: maDayList,
                         emaDayList: emaDayList,
                         strokesMainState: [1, 1, 1, 1, 1],
+                        strokeSecondState: [1, 1, 1, 1, 1],
                       ),
                     ),
                     if (showLoading)
@@ -201,6 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
             .toList()
             .reversed
             .toList();
+        print(list);
       } catch (e) {
         List parseJson = json.decode(result);
         datas = parseJson.map((item) => KLineEntity.fromBinance(item)).toList();

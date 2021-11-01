@@ -58,6 +58,11 @@ class KLineEntity extends KEntity {
     close_time =
         DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
             .millisecondsSinceEpoch;
+    startTime = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
+        .millisecondsSinceEpoch;
+    closeTime =
+        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
+            .millisecondsSinceEpoch;
     print(DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
         .millisecondsSinceEpoch);
     print(DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
