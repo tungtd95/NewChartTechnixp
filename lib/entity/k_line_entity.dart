@@ -11,7 +11,7 @@ class KLineEntity extends KEntity {
   late double vol;
   double? amount;
   int? count;
-  int id = 0;
+  int? id;
 
   int? closeTime;
   int? startTime;
@@ -53,6 +53,7 @@ class KLineEntity extends KEntity {
     low = double.parse(json['low'].toString());
     close = double.parse(json['close'].toString());
     vol = double.parse(json['volume'].toString());
+    id = json['id'] as int? ?? 0;
     open_time = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
         .millisecondsSinceEpoch;
     close_time =
