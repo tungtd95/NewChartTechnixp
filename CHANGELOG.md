@@ -1,3 +1,7 @@
+## [0.0.6+21]
+
+## - TODO: add model From other exchange
+
 ## [0.0.6+19]
 
 ## - TODO: add model From other exchange
