@@ -47,6 +47,11 @@ class KLineEntity extends KEntity {
     opens = json['open'];
     closes = json['close'];
     volumex = json['volume'];
+    open = double.parse(json['open'].toString());
+    high = double.parse(json['high'].toString());
+    low = double.parse(json['low'].toString());
+    close = double.parse(json['close'].toString());
+    vol = double.parse(json['volume'].toString());
   }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {
