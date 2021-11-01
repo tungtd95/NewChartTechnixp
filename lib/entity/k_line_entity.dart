@@ -21,6 +21,13 @@ class KLineEntity extends KEntity {
   double? ignore;
   int? open_time;
   int? close_time;
+  String? openTimes;
+  String? closeTimes;
+  String? lows;
+  String? highs;
+  String? opens;
+  String? closes;
+  String? volumex;
 
   KLineEntity.fromPositionExchange(Map<String, dynamic> json) {
     open = (json['open'] as num).toDouble();
@@ -30,6 +37,16 @@ class KLineEntity extends KEntity {
     vol = (json['volume'] as num).toDouble();
     open_time = (json['open_time'] as num).toInt();
     close_time = (json['close_time'] as num).toInt();
+  }
+
+  KLineEntity.fromPosition(Map<String, dynamic> json) {
+    openTimes = json['open_time'];
+    closeTimes = json['close_time'];
+    lows = json['low'];
+    highs = json['high'];
+    opens = json['open'];
+    closes = json['close'];
+    volumex = json['volume'];
   }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {
