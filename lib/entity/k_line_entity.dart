@@ -53,10 +53,15 @@ class KLineEntity extends KEntity {
     low = double.parse(json['low'].toString());
     close = double.parse(json['close'].toString());
     vol = double.parse(json['volume'].toString());
-    open_time =
-        DateTime.parse(json['open_time'].toString()).millisecondsSinceEpoch;
+    open_time = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
+        .millisecondsSinceEpoch;
     close_time =
-        DateTime.parse(json['close_time'].toString()).millisecondsSinceEpoch;
+        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
+            .millisecondsSinceEpoch;
+    print(DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
+        .millisecondsSinceEpoch);
+    print(DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
+        .millisecondsSinceEpoch);
   }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {
