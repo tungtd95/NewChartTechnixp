@@ -28,6 +28,7 @@ class KLineEntity extends KEntity {
   String? opens;
   String? closes;
   String? volumex;
+  var dateUtc = DateTime.now().toUtc();
 
   KLineEntity.fromPositionExchange(Map<String, dynamic> json) {
     open = (json['open'] as num).toDouble();
@@ -52,8 +53,10 @@ class KLineEntity extends KEntity {
     low = double.parse(json['low'].toString());
     close = double.parse(json['close'].toString());
     vol = double.parse(json['volume'].toString());
-    open_time = int.parse(json['open_time'].toString());
-    close_time = int.parse(json['close_time'].toString());
+    open_time =
+        DateTime.parse(json['open_time'].toString()).millisecondsSinceEpoch;
+    close_time =
+        DateTime.parse(json['close_time'].toString()).millisecondsSinceEpoch;
   }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {
