@@ -247,8 +247,8 @@ abstract class BaseChartPainter extends CustomPainter {
         mSecondaryMinValue = min(mSecondaryMinValue, item.cci!);
       }
     } else {
-      mSecondaryMaxValue = max(mSecondaryMaxValue, item.r!);
-      mSecondaryMinValue = min(mSecondaryMinValue, item.r!);
+      mSecondaryMaxValue = max(mSecondaryMaxValue, item.r ?? 1);
+      mSecondaryMinValue = min(mSecondaryMinValue, item.r ?? 1);
     }
   }
 
