@@ -44,6 +44,15 @@ class KLineEntity extends KEntity {
     low = double.parse(json['low']?.toString() ?? '0');
     close = double.parse(json['close']?.toString() ?? '0');
     vol = double.parse(json['volume']?.toString() ?? '0');
+    id = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
+            .millisecondsSinceEpoch ~/
+        1000;
+    closeTime =
+        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
+            .millisecondsSinceEpoch;
+    startTime = id;
+    amount = 5611879248.96223;
+    count = 998055;
   }
 
   KLineEntity.fromBinance(dynamic data) {
