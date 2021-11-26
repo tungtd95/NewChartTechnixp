@@ -19,59 +19,13 @@ class KLineEntity extends KEntity {
   double? takerBuyBaseVolume;
   double? takerBuyQuoteVolume;
   double? ignore;
-  int? open_time;
-  int? close_time;
   double? openTimes;
   double? closeTimes;
   double? lows;
   double? highs;
   double? opens;
   double? closes;
-  double? volumex;
   var dateUtc = DateTime.now().toUtc();
-
-  KLineEntity.fromPositionExchange(Map<String, dynamic> json) {
-    open = (json['open'] as num).toDouble();
-    high = (json['high'] as num).toDouble();
-    low = (json['low'] as num).toDouble();
-    close = (json['close'] as num).toDouble();
-    vol = (json['volume'] as num).toDouble();
-    open_time = (json['open_time'] as num).toInt();
-    close_time = (json['close_time'] as num).toInt();
-  }
-
-  KLineEntity.fromPosition(Map<String, dynamic> json) {
-    openTimes = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
-        .millisecondsSinceEpoch
-        .toDouble();
-    closeTimes =
-        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
-            .millisecondsSinceEpoch
-            .toDouble();
-    lows = double.parse(json['low'].toString());
-    highs = double.parse(json['high'].toString());
-    opens = double.parse(json['open'].toString());
-    closes = double.parse(json['close'].toString());
-    volumex = double.parse(json['volume'].toString());
-    open = double.parse(json['open'].toString());
-    high = double.parse(json['high'].toString());
-    low = double.parse(json['low'].toString());
-    close = double.parse(json['close'].toString());
-    vol = double.parse(json['volume'].toString());
-    id = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
-            .millisecondsSinceEpoch ~/
-        1000;
-    open_time = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
-        .millisecondsSinceEpoch;
-    close_time =
-        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
-            .millisecondsSinceEpoch;
-    startTime = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
-        .millisecondsSinceEpoch;
-    closeTime =
-        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
-            .millisecondsSinceEpoch;
-  }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {
     open = (json['open'] as num).toDouble();
@@ -82,6 +36,14 @@ class KLineEntity extends KEntity {
     amount = (json['amount'] as num?)?.toDouble();
     count = json['count'] as int?;
     id = json['id'] as int? ?? 0;
+  }
+
+  KLineEntity.fromPosition(Map<String, dynamic> json) {
+    open = double.parse(json['open']?.toString() ?? '0');
+    high = double.parse(json['high']?.toString() ?? '0');
+    low = double.parse(json['low']?.toString() ?? '0');
+    close = double.parse(json['close']?.toString() ?? '0');
+    vol = double.parse(json['volume']?.toString() ?? '0');
   }
 
   KLineEntity.fromBinance(dynamic data) {
