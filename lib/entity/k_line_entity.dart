@@ -21,13 +21,13 @@ class KLineEntity extends KEntity {
   double? ignore;
   int? open_time;
   int? close_time;
-  String? openTimes;
-  String? closeTimes;
-  String? lows;
-  String? highs;
-  String? opens;
-  String? closes;
-  String? volumex;
+  double? openTimes;
+  double? closeTimes;
+  double? lows;
+  double? highs;
+  double? opens;
+  double? closes;
+  double? volumex;
   var dateUtc = DateTime.now().toUtc();
 
   KLineEntity.fromPositionExchange(Map<String, dynamic> json) {
@@ -41,13 +41,18 @@ class KLineEntity extends KEntity {
   }
 
   KLineEntity.fromPosition(Map<String, dynamic> json) {
-    openTimes = json['open_time'];
-    closeTimes = json['close_time'];
-    lows = json['low'];
-    highs = json['high'];
-    opens = json['open'];
-    closes = json['close'];
-    volumex = json['volume'];
+    openTimes = DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
+        .millisecondsSinceEpoch
+        .toDouble();
+    closeTimes =
+        DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
+            .millisecondsSinceEpoch
+            .toDouble();
+    lows = double.parse(json['low'].toString());
+    highs = double.parse(json['high'].toString());
+    opens = double.parse(json['open'].toString());
+    closes = double.parse(json['close'].toString());
+    volumex = double.parse(json['volume'].toString());
     open = double.parse(json['open'].toString());
     high = double.parse(json['high'].toString());
     low = double.parse(json['low'].toString());
@@ -66,10 +71,6 @@ class KLineEntity extends KEntity {
     closeTime =
         DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
             .millisecondsSinceEpoch;
-    print(DateTime.parse(json['open_time'].toString().replaceAll('Z', ''))
-        .millisecondsSinceEpoch);
-    print(DateTime.parse(json['close_time'].toString().replaceAll('Z', ''))
-        .millisecondsSinceEpoch);
   }
 
   KLineEntity.fromHuobi(Map<String, dynamic> json) {

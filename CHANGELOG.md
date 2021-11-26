@@ -1,3 +1,11 @@
+## [0.0.6+28]
+
+## - TODO: fix model parse
+
+## [0.0.6+27]
+
+## - TODO: add model From other exchange
+
 ## [0.0.6+26]
 
 ## - TODO: add model From other exchange
