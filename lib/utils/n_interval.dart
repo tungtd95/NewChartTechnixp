@@ -2,6 +2,7 @@ enum NInterval {
   m_1,
   m_3,
   m_5,
+  m_10,
   m_15,
   m_30,
   h_1,
@@ -61,6 +62,8 @@ extension StringExt on String {
         return NInterval.m_3;
       case '5m':
         return NInterval.m_5;
+      case '10m':
+        return NInterval.m_10;
       case '15m':
         return NInterval.m_15;
       case '30m':
