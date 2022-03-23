@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'k_line_model.dart';
 
@@ -59,7 +61,7 @@ class _$KLineModelTearOff {
     );
   }
 
-  KLineModel fromJson(Map<String, Object> json) {
+  KLineModel fromJson(Map<String, Object?> json) {
     return KLineModel.fromJson(json);
   }
 }
@@ -371,7 +373,7 @@ class _$_KLineModel implements _KLineModel {
       required this.B});
 
   factory _$_KLineModel.fromJson(Map<String, dynamic> json) =>
-      _$_$_KLineModelFromJson(json);
+      _$$_KLineModelFromJson(json);
 
   @override
   final int t;
@@ -416,63 +418,47 @@ class _$_KLineModel implements _KLineModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _KLineModel &&
-            (identical(other.t, t) ||
-                const DeepCollectionEquality().equals(other.t, t)) &&
-            (identical(other.T, T) ||
-                const DeepCollectionEquality().equals(other.T, T)) &&
-            (identical(other.s, s) ||
-                const DeepCollectionEquality().equals(other.s, s)) &&
-            (identical(other.i, i) ||
-                const DeepCollectionEquality().equals(other.i, i)) &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)) &&
-            (identical(other.L, L) ||
-                const DeepCollectionEquality().equals(other.L, L)) &&
-            (identical(other.o, o) ||
-                const DeepCollectionEquality().equals(other.o, o)) &&
-            (identical(other.c, c) ||
-                const DeepCollectionEquality().equals(other.c, c)) &&
-            (identical(other.h, h) ||
-                const DeepCollectionEquality().equals(other.h, h)) &&
-            (identical(other.l, l) ||
-                const DeepCollectionEquality().equals(other.l, l)) &&
-            (identical(other.v, v) ||
-                const DeepCollectionEquality().equals(other.v, v)) &&
-            (identical(other.n, n) ||
-                const DeepCollectionEquality().equals(other.n, n)) &&
-            (identical(other.x, x) ||
-                const DeepCollectionEquality().equals(other.x, x)) &&
-            (identical(other.q, q) ||
-                const DeepCollectionEquality().equals(other.q, q)) &&
-            (identical(other.V, V) ||
-                const DeepCollectionEquality().equals(other.V, V)) &&
-            (identical(other.Q, Q) ||
-                const DeepCollectionEquality().equals(other.Q, Q)) &&
-            (identical(other.B, B) ||
-                const DeepCollectionEquality().equals(other.B, B)));
+        (other.runtimeType == runtimeType &&
+            other is _KLineModel &&
+            const DeepCollectionEquality().equals(other.t, t) &&
+            const DeepCollectionEquality().equals(other.T, T) &&
+            const DeepCollectionEquality().equals(other.s, s) &&
+            const DeepCollectionEquality().equals(other.i, i) &&
+            const DeepCollectionEquality().equals(other.f, f) &&
+            const DeepCollectionEquality().equals(other.L, L) &&
+            const DeepCollectionEquality().equals(other.o, o) &&
+            const DeepCollectionEquality().equals(other.c, c) &&
+            const DeepCollectionEquality().equals(other.h, h) &&
+            const DeepCollectionEquality().equals(other.l, l) &&
+            const DeepCollectionEquality().equals(other.v, v) &&
+            const DeepCollectionEquality().equals(other.n, n) &&
+            const DeepCollectionEquality().equals(other.x, x) &&
+            const DeepCollectionEquality().equals(other.q, q) &&
+            const DeepCollectionEquality().equals(other.V, V) &&
+            const DeepCollectionEquality().equals(other.Q, Q) &&
+            const DeepCollectionEquality().equals(other.B, B));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(t) ^
-      const DeepCollectionEquality().hash(T) ^
-      const DeepCollectionEquality().hash(s) ^
-      const DeepCollectionEquality().hash(i) ^
-      const DeepCollectionEquality().hash(f) ^
-      const DeepCollectionEquality().hash(L) ^
-      const DeepCollectionEquality().hash(o) ^
-      const DeepCollectionEquality().hash(c) ^
-      const DeepCollectionEquality().hash(h) ^
-      const DeepCollectionEquality().hash(l) ^
-      const DeepCollectionEquality().hash(v) ^
-      const DeepCollectionEquality().hash(n) ^
-      const DeepCollectionEquality().hash(x) ^
-      const DeepCollectionEquality().hash(q) ^
-      const DeepCollectionEquality().hash(V) ^
-      const DeepCollectionEquality().hash(Q) ^
-      const DeepCollectionEquality().hash(B);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(t),
+      const DeepCollectionEquality().hash(T),
+      const DeepCollectionEquality().hash(s),
+      const DeepCollectionEquality().hash(i),
+      const DeepCollectionEquality().hash(f),
+      const DeepCollectionEquality().hash(L),
+      const DeepCollectionEquality().hash(o),
+      const DeepCollectionEquality().hash(c),
+      const DeepCollectionEquality().hash(h),
+      const DeepCollectionEquality().hash(l),
+      const DeepCollectionEquality().hash(v),
+      const DeepCollectionEquality().hash(n),
+      const DeepCollectionEquality().hash(x),
+      const DeepCollectionEquality().hash(q),
+      const DeepCollectionEquality().hash(V),
+      const DeepCollectionEquality().hash(Q),
+      const DeepCollectionEquality().hash(B));
 
   @JsonKey(ignore: true)
   @override
@@ -481,7 +467,7 @@ class _$_KLineModel implements _KLineModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_KLineModelToJson(this);
+    return _$$_KLineModelToJson(this);
   }
 }
 
@@ -509,39 +495,39 @@ abstract class _KLineModel implements KLineModel {
       _$_KLineModel.fromJson;
 
   @override
-  int get t => throw _privateConstructorUsedError;
+  int get t;
   @override
-  int get T => throw _privateConstructorUsedError;
+  int get T;
   @override
-  String get s => throw _privateConstructorUsedError;
+  String get s;
   @override
-  String get i => throw _privateConstructorUsedError;
+  String get i;
   @override
-  int get f => throw _privateConstructorUsedError;
+  int get f;
   @override
-  int get L => throw _privateConstructorUsedError;
+  int get L;
   @override
-  String get o => throw _privateConstructorUsedError;
+  String get o;
   @override
-  String get c => throw _privateConstructorUsedError;
+  String get c;
   @override
-  String get h => throw _privateConstructorUsedError;
+  String get h;
   @override
-  String get l => throw _privateConstructorUsedError;
+  String get l;
   @override
-  String get v => throw _privateConstructorUsedError;
+  String get v;
   @override
-  int get n => throw _privateConstructorUsedError;
+  int get n;
   @override
-  bool get x => throw _privateConstructorUsedError;
+  bool get x;
   @override
-  String get q => throw _privateConstructorUsedError;
+  String get q;
   @override
-  String get V => throw _privateConstructorUsedError;
+  String get V;
   @override
-  String get Q => throw _privateConstructorUsedError;
+  String get Q;
   @override
-  String get B => throw _privateConstructorUsedError;
+  String get B;
   @override
   @JsonKey(ignore: true)
   _$KLineModelCopyWith<_KLineModel> get copyWith =>
